@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O'ZBEGIM — Ресторан и Банкетный Комплекс | Ташкент</title>
+<meta name="description" content="O'ZBEGIM — премиальный ресторан и свадебный банкетный комплекс в Ташкенте. Свадьбы, банкеты, корпоративы. Онлайн-бронирование.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --gold: #1e3a6e;
+  --gold-light: #2563a8;
+  --gold-dark: #0f2347;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --dark2: #1A1A1A;
+  --dark3: #242424;
+  --dark4: #2E2E2E;
+  --white: #FAFAF8;
+  --cream: #DBEAFE;
+  --text-muted: #8A8A8A;
+  --border: rgba(30,58,110,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--white);font-family:'Raleway',sans-serif;overflow-x:hidden}
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:#1338A0;border-radius:3px}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all 0.4s;padding:20px 0}
+#header.scrolled{background:rgba(10,10,10,0.97);backdrop-filter:blur(20px);padding:12px 0;border-bottom:1px solid var(--border)}
+.header-inner{max-width:1400px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);text-decoration:none;letter-spacing:2px;display:flex;flex-direction:column;line-height:1}
+.logo span{font-size:10px;font-family:'Raleway',sans-serif;letter-spacing:4px;color:var(--gold-light);font-weight:300;margin-top:2px}
+nav{display:flex;gap:32px;align-items:center}
+nav a{color:var(--white);text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;position:relative;transition:color 0.3s;opacity:0.85}
+nav a:after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+nav a:hover{color:var(--gold);opacity:1}
+nav a:hover:after{width:100%}
+.header-actions{display:flex;align-items:center;gap:16px}
+.btn-outline-gold{border:1px solid var(--gold);color:var(--gold);padding:9px 24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;background:transparent;transition:all 0.3s;font-family:'Raleway',sans-serif}
+.btn-outline-gold:hover{background:var(--gold);color:var(--black)}
+.btn-gold{background:var(--gold);color:var(--black);padding:10px 26px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border:none;transition:all 0.3s;font-family:'Raleway',sans-serif;font-weight:600}
+.btn-gold:hover{background:var(--gold-light)}
+.social-links{display:flex;gap:12px}
+.social-links a{color:var(--gold);font-size:16px;transition:color 0.3s;opacity:0.8}
+.social-links a:hover{color:var(--gold-light);opacity:1}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger span{display:block;width:24px;height:1.5px;background:var(--gold);transition:all 0.3s}
+
+/* HERO */
+#hero{height:100vh;min-height:700px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease}
+.hero-slide.active{opacity:1}
+.hero-slide:nth-child(1){background-image:linear-gradient(to bottom right,#0A0A0A 0%,#1a0e00 40%,#0A0A0A 100%),url("data:image/svg+xml,%3Csvg width='1920' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1920' height='1080' fill='%230a0a0a'/%3E%3C/svg%3E")}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.4) 60%,rgba(0,0,0,0.75) 100%);z-index:1}
+.hero-pattern{position:absolute;inset:0;z-index:1;opacity:0.04;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px;padding:0 24px}
+.hero-badge{display:inline-block;border:1px solid var(--gold);padding:8px 24px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:32px;font-family:'Raleway',sans-serif}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,90px);line-height:1.05;margin-bottom:12px;color:var(--white)}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.5vw,26px);color:var(--cream);opacity:0.85;margin-bottom:16px;font-weight:300;letter-spacing:1px}
+.hero-desc{font-size:14px;color:var(--text-muted);letter-spacing:0.5px;max-width:560px;margin:0 auto 48px;line-height:1.8}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.btn-hero-primary{background:var(--gold);color:var(--black);padding:16px 40px;font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:none;font-family:'Raleway',sans-serif;font-weight:700;transition:all 0.3s}
+.btn-hero-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-hero-secondary{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.4);padding:16px 40px;font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'Raleway',sans-serif;font-weight:400;transition:all 0.3s}
+.btn-hero-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer}
+.hero-scroll span{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+.hero-scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 2s infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-inner{max-width:1400px;margin:0 auto;padding:0 40px}
+.section-header{text-align:center;margin-bottom:70px}
+.section-eyebrow{display:inline-block;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-family:'Raleway',sans-serif}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);color:var(--white);line-height:1.15;margin-bottom:16px}
+.section-title em{color:var(--gold);font-style:italic}
+.section-divider{width:60px;height:1px;background:var(--gold);margin:20px auto;opacity:0.6}
+.section-desc{font-size:15px;color:var(--text-muted);max-width:560px;margin:0 auto;line-height:1.8}
+
+/* ADVANTAGES */
+#advantages{background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.advantages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.advantage-item{background:var(--dark2);padding:48px 40px;text-align:center;transition:background 0.3s;position:relative;overflow:hidden}
+.advantage-item:hover{background:var(--dark3)}
+.adv-icon{width:64px;height:64px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:var(--gold);font-size:24px;transition:all 0.3s}
+.advantage-item:hover .adv-icon{background:var(--gold);color:var(--black)}
+.adv-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:10px}
+.adv-desc{font-size:13px;color:var(--text-muted);line-height:1.7}
+
+/* ABOUT */
+#about{background:var(--dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-image-block{position:relative}
+.about-main-img{width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,var(--dark3),var(--dark4));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-main-img::before{content:'';position:absolute;inset:20px;border:1px solid var(--border)}
+.about-main-img .img-placeholder{font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);opacity:0.3;font-style:italic}
+.about-accent-box{position:absolute;bottom:-30px;right:-30px;background:var(--gold);padding:32px;text-align:center;width:160px}
+.about-accent-box .num{font-family:'Playfair Display',serif;font-size:42px;color:var(--black);line-height:1;font-weight:700}
+.about-accent-box .label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--black);opacity:0.7;margin-top:4px}
+.about-content{}
+.about-title{font-family:'Playfair Display',serif;font-size:42px;color:var(--white);line-height:1.2;margin-bottom:24px}
+.about-title em{color:var(--gold);font-style:italic;display:block}
+.about-text{font-size:14px;color:var(--text-muted);line-height:1.9;margin-bottom:20px}
+.about-features{display:flex;flex-direction:column;gap:16px;margin:32px 0}
+.about-feature{display:flex;align-items:flex-start;gap:16px}
+.about-feature-icon{width:36px;height:36px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:14px;flex-shrink:0;margin-top:2px}
+.about-feature-text h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);margin-bottom:4px}
+.about-feature-text p{font-size:13px;color:var(--text-muted);line-height:1.6}
+.stats-row{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.stat-item{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;color:var(--gold)}
+.stat-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+
+/* MENU */
+#menu{background:var(--dark2)}
+.menu-cats{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:48px}
+.menu-cat-btn{padding:10px 24px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:'Raleway',sans-serif;transition:all 0.3s}
+.menu-cat-btn.active,.menu-cat-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.05)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.menu-card{background:var(--dark3);border:1px solid var(--border);transition:all 0.3s;cursor:pointer}
+.menu-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.menu-card-img{height:200px;background:linear-gradient(135deg,var(--dark4),var(--dark3));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.menu-card-img .dish-icon{font-size:48px;opacity:0.3}
+.menu-card-body{padding:20px}
+.menu-card-cat{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.menu-card-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:8px}
+.menu-card-desc{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:16px}
+.menu-card-footer{display:flex;align-items:center;justify-content:space-between}
+.menu-card-price{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold)}
+.menu-card-price span{font-size:11px;color:var(--text-muted);font-family:'Raleway',sans-serif}
+
+/* GALLERY */
+#gallery{background:var(--dark)}
+.gallery-tabs{display:flex;gap:24px;justify-content:center;margin-bottom:48px;flex-wrap:wrap}
+.gallery-tab{padding:8px 20px;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--text-muted);border-bottom:1px solid transparent;transition:all 0.3s;background:none;border:none;font-family:'Raleway',sans-serif}
+.gallery-tab.active,.gallery-tab:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.gallery-item{background:linear-gradient(135deg,var(--dark3),var(--dark4));border:1px solid var(--border);position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.gallery-item:hover{border-color:var(--gold)}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item .gal-icon{font-size:36px;color:var(--gold);opacity:0.25}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:20px}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay-text{font-family:'Playfair Display',serif;font-size:15px;color:var(--white)}
+.gallery-overlay-sub{font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+/* BOOKING */
+#booking{background:var(--dark2);position:relative;overflow:hidden}
+#booking::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.03) 0%,transparent 60%);pointer-events:none}
+.booking-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.booking-info h2{font-family:'Playfair Display',serif;font-size:42px;color:var(--white);margin-bottom:24px;line-height:1.2}
+.booking-info h2 em{color:var(--gold);font-style:italic;display:block}
+.booking-info p{font-size:14px;color:var(--text-muted);line-height:1.9;margin-bottom:32px}
+.booking-perks{display:flex;flex-direction:column;gap:20px}
+.booking-perk{display:flex;align-items:center;gap:16px}
+.booking-perk-icon{width:44px;height:44px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;flex-shrink:0}
+.booking-perk-text{font-size:13px;color:var(--text-muted)}
+.booking-perk-text strong{display:block;color:var(--white);font-size:14px;margin-bottom:2px}
+.booking-form{background:var(--dark3);border:1px solid var(--border);padding:48px}
+.booking-form h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);margin-bottom:32px;text-align:center}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group.full{grid-column:span 2}
+.form-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.8}
+.form-input,.form-select,.form-textarea{background:var(--dark4);border:1px solid var(--border);color:var(--white);padding:14px 16px;font-size:14px;font-family:'Raleway',sans-serif;transition:border-color 0.3s;width:100%;outline:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold)}
+.form-select{cursor:pointer}
+.form-select option{background:var(--dark4);color:var(--white)}
+.form-textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;background:var(--gold);color:var(--black);border:none;padding:16px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:'Raleway',sans-serif;font-weight:700;cursor:pointer;margin-top:8px;transition:all 0.3s}
+.form-submit:hover{background:var(--gold-light)}
+
+/* CONTACTS */
+#contacts{background:var(--dark)}
+.contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:32px}
+.contact-item{display:flex;gap:20px;align-items:flex-start}
+.contact-icon{width:48px;height:48px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;flex-shrink:0}
+.contact-item-text h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);margin-bottom:6px}
+.contact-item-text p,.contact-item-text a{font-size:14px;color:var(--text-muted);text-decoration:none;display:block;line-height:1.6;transition:color 0.3s}
+.contact-item-text a:hover{color:var(--gold)}
+.map-placeholder{background:var(--dark3);border:1px solid var(--border);height:400px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.map-placeholder iframe{width:100%;height:100%;border:none}
+.social-block{margin-top:40px}
+.social-block h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:20px}
+.social-btns{display:flex;gap:12px;flex-wrap:wrap}
+.social-btn{display:flex;align-items:center;gap:10px;padding:12px 24px;border:1px solid var(--border);color:var(--white);text-decoration:none;font-size:13px;transition:all 0.3s}
+.social-btn:hover{border-color:var(--gold);color:var(--gold)}
+.social-btn i{font-size:16px}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--border);padding:60px 0 30px}
+.footer-inner{max-width:1400px;margin:0 auto;padding:0 40px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{display:inline-block;margin-bottom:16px}
+.footer-brand p{font-size:13px;color:var(--text-muted);line-height:1.7;max-width:260px}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.3s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:12px;color:var(--text-muted)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{color:var(--text-muted);font-size:16px;transition:color 0.3s}
+.footer-social a:hover{color:var(--gold)}
+
+/* MODAL OVERLAY */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.modal-overlay.open{display:flex}
+.modal{background:var(--dark3);border:1px solid var(--border);width:90%;max-width:480px;padding:48px;position:relative;animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;transition:color 0.3s}
+.modal-close:hover{color:var(--gold)}
+.modal-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);margin-bottom:8px}
+.modal-subtitle{font-size:13px;color:var(--text-muted);margin-bottom:32px}
+.modal-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:1px solid var(--border)}
+.modal-tab{flex:1;padding:12px;text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.3s;background:none;border-left:none;border-right:none;border-top:none;font-family:'Raleway',sans-serif}
+.modal-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.auth-form{display:flex;flex-direction:column;gap:16px}
+.auth-form .form-group{display:flex;flex-direction:column;gap:8px}
+.auth-btn{background:var(--gold);color:var(--black);border:none;padding:14px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:'Raleway',sans-serif;font-weight:700;cursor:pointer;transition:all 0.3s;margin-top:8px}
+.auth-btn:hover{background:var(--gold-light)}
+.auth-error{color:#e74c3c;font-size:13px;margin-top:8px;display:none}
+.auth-success{color:#2ecc71;font-size:13px;margin-top:8px;display:none}
+.user-menu{display:none;position:relative}
+.user-menu.visible{display:flex;align-items:center;gap:12px}
+.user-name-btn{background:none;border:1px solid var(--border);color:var(--gold);padding:8px 16px;font-size:12px;cursor:pointer;letter-spacing:1px;font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:8px}
+.user-dropdown{position:absolute;top:100%;right:0;background:var(--dark3);border:1px solid var(--border);min-width:200px;display:none;z-index:100;margin-top:8px}
+.user-dropdown.open{display:block}
+.user-dropdown a,.user-dropdown button{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:13px;color:var(--white);text-decoration:none;background:none;border:none;width:100%;text-align:left;cursor:pointer;font-family:'Raleway',sans-serif;transition:all 0.3s}
+.user-dropdown a:hover,.user-dropdown button:hover{color:var(--gold);background:rgba(201,168,76,0.05)}
+.user-dropdown hr{border:none;border-top:1px solid var(--border)}
+
+/* NOTIFICATION BADGE */
+.notif-badge{background:var(--gold);color:var(--black);font-size:10px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:-8px;right:-8px}
+
+/* ADMIN PANEL */
+#adminPanel{position:fixed;inset:0;background:var(--dark);z-index:99999;display:none;overflow-y:auto}
+#adminPanel.open{display:block}
+.admin-layout{display:flex;min-height:100vh}
+.admin-sidebar{width:260px;background:var(--black);border-right:1px solid var(--border);flex-shrink:0;position:sticky;top:0;height:100vh;overflow-y:auto}
+.admin-logo{padding:32px 24px;border-bottom:1px solid var(--border)}
+.admin-logo h1{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)}
+.admin-logo p{font-size:11px;color:var(--text-muted);margin-top:4px;letter-spacing:1px}
+.admin-nav{padding:16px 0;display:flex;flex-direction:column;height:calc(100vh - 100px)}
+.admin-nav-item{display:flex;align-items:center;gap:12px;padding:13px 24px;font-size:13px;color:var(--text-muted);cursor:pointer;transition:all 0.3s;border-left:2px solid transparent;letter-spacing:0.5px}
+.admin-nav-item:hover,.admin-nav-item.active{color:var(--gold);background:rgba(201,168,76,0.06);border-left-color:var(--gold)}
+.admin-nav-item i{width:18px;text-align:center}
+.admin-main{flex:1;overflow-y:auto}
+.admin-header{padding:20px 32px;background:var(--dark2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.admin-header h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--white)}
+.admin-content{padding:32px}
+.admin-section{display:none}
+.admin-section.active{display:block}
+.admin-burger{display:none;background:none;border:1px solid var(--border);color:var(--gold);width:38px;height:38px;align-items:center;justify-content:center;cursor:pointer;font-size:16px;flex-shrink:0}
+.admin-burger:hover{border-color:var(--gold)}
+.admin-sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99}
+.admin-sidebar-overlay.open{display:block}
+
+/* ADMIN CARDS */
+.stats-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stat-card{background:var(--dark3);border:1px solid var(--border);padding:24px;border-left:3px solid var(--gold)}
+.stat-card-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.stat-card-value{font-family:'Playfair Display',serif;font-size:36px;color:var(--gold)}
+.stat-card-sub{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+/* ADMIN TABLE */
+.admin-table-wrap{background:var(--dark3);border:1px solid var(--border);overflow:hidden}
+.admin-table-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.admin-table-head h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--white)}
+.admin-table-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.admin-search{background:var(--dark4);border:1px solid var(--border);color:var(--white);padding:9px 16px;font-size:13px;font-family:'Raleway',sans-serif;outline:none;width:220px}
+.admin-search:focus{border-color:var(--gold)}
+.admin-filter{background:var(--dark4);border:1px solid var(--border);color:var(--white);padding:9px 12px;font-size:13px;font-family:'Raleway',sans-serif;cursor:pointer;outline:none}
+.admin-filter option{background:var(--dark4)}
+.btn-admin-add{background:var(--gold);color:var(--black);border:none;padding:9px 20px;font-size:12px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'Raleway',sans-serif;font-weight:700}
+.admin-table{width:100%;border-collapse:collapse}
+.admin-table th{background:var(--dark4);padding:12px 16px;text-align:left;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);white-space:nowrap}
+.admin-table td{padding:14px 16px;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-muted);vertical-align:middle}
+.admin-table tr:hover td{background:rgba(201,168,76,0.03);color:var(--white)}
+.admin-table tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:4px 12px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.badge-pending{background:rgba(241,196,15,0.15);color:#f1c40f}
+.badge-confirmed{background:rgba(46,204,113,0.15);color:#2ecc71}
+.badge-rejected{background:rgba(231,76,60,0.15);color:#e74c3c}
+.badge-completed{background:rgba(52,152,219,0.15);color:#3498db}
+.btn-icon{background:none;border:1px solid var(--border);color:var(--text-muted);width:32px;height:32px;cursor:pointer;font-size:13px;transition:all 0.3s;display:inline-flex;align-items:center;justify-content:center}
+.btn-icon:hover{border-color:var(--gold);color:var(--gold)}
+.btn-icon.danger:hover{border-color:#e74c3c;color:#e74c3c}
+.btn-icon.success:hover{border-color:#2ecc71;color:#2ecc71}
+.table-actions{display:flex;gap:6px;flex-wrap:wrap}
+
+/* ADMIN FORM */
+.admin-form-wrap{background:var(--dark3);border:1px solid var(--border);padding:32px}
+.admin-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.admin-form-group{display:flex;flex-direction:column;gap:8px}
+.admin-form-group.full{grid-column:span 2}
+.admin-form-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.8}
+
+/* PERSONAL CABINET */
+#cabinet{position:fixed;inset:0;background:var(--dark);z-index:9990;display:none;overflow-y:auto}
+#cabinet.open{display:block}
+.cabinet-inner{max-width:1000px;margin:0 auto;padding:100px 40px 60px}
+.cabinet-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
+.cabinet-title{font-family:'Playfair Display',serif;font-size:36px;color:var(--gold)}
+.cabinet-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:32px}
+.cabinet-tab{padding:14px 28px;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.3s;background:none;border-left:none;border-right:none;border-top:none;font-family:'Raleway',sans-serif}
+.cabinet-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.cabinet-section{display:none}
+.cabinet-section.active{display:block}
+.booking-card{background:var(--dark3);border:1px solid var(--border);padding:24px;margin-bottom:16px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.booking-card-info{}
+.booking-card-date{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:4px}
+.booking-card-type{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:12px}
+.booking-card-details{font-size:13px;color:var(--text-muted);line-height:1.7}
+.booking-card-actions{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.notif-item{background:var(--dark3);border:1px solid var(--border);padding:20px 24px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start}
+.notif-item.unread{border-left:3px solid var(--gold)}
+.notif-icon{color:var(--gold);font-size:18px;margin-top:2px}
+.notif-text h4{font-size:14px;color:var(--white);margin-bottom:4px}
+.notif-text p{font-size:13px;color:var(--text-muted)}
+.notif-time{font-size:11px;color:var(--text-muted);margin-top:4px}
+.profile-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px}
+.profile-form .form-group.full{grid-column:span 2}
+.empty-state{text-align:center;padding:60px 20px}
+.empty-state i{font-size:48px;color:var(--gold);opacity:0.3;margin-bottom:16px}
+.empty-state p{color:var(--text-muted);font-size:14px}
+
+/* TOAST */
+.toast-container{position:fixed;bottom:32px;right:32px;z-index:99999;display:flex;flex-direction:column;gap:10px}
+.toast{background:var(--dark3);border:1px solid var(--border);padding:16px 20px;min-width:300px;display:flex;align-items:center;gap:12px;animation:toastIn 0.4s ease;border-left:3px solid var(--gold)}
+.toast.success{border-left-color:#2ecc71}
+.toast.error{border-left-color:#e74c3c}
+.toast.info{border-left-color:var(--gold)}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+.toast i{color:var(--gold);font-size:16px}
+.toast.success i{color:#2ecc71}
+.toast.error i{color:#e74c3c}
+.toast-text{font-size:13px;color:var(--white)}
+
+/* CONFIRM MODAL */
+.confirm-modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:99999;display:none;align-items:center;justify-content:center}
+.confirm-modal.open{display:flex}
+.confirm-box{background:var(--dark3);border:1px solid var(--border);padding:40px;max-width:400px;width:90%;text-align:center}
+.confirm-box h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);margin-bottom:12px}
+.confirm-box p{font-size:14px;color:var(--text-muted);margin-bottom:32px}
+.confirm-btns{display:flex;gap:12px;justify-content:center}
+
+/* DETAIL MODAL */
+.detail-modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:99999;display:none;align-items:center;justify-content:center;overflow-y:auto;padding:20px}
+.detail-modal.open{display:flex}
+.detail-box{background:var(--dark3);border:1px solid var(--border);padding:40px;max-width:600px;width:100%;position:relative}
+.detail-row{display:flex;padding:12px 0;border-bottom:1px solid var(--border)}
+.detail-row:last-child{border-bottom:none}
+.detail-key{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);width:160px;flex-shrink:0}
+.detail-val{font-size:14px;color:var(--white)}
+
+/* ANALYTICS */
+.chart-wrap{background:var(--dark3);border:1px solid var(--border);padding:24px;margin-bottom:24px}
+.chart-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:20px}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:180px}
+.bar-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.bar-fill{background:var(--gold);width:100%;min-height:4px;border-radius:0;transition:height 0.5s}
+.bar-label{font-size:10px;color:var(--text-muted);text-align:center}
+.bar-val{font-size:11px;color:var(--gold);font-weight:600}
+
+/* MOBILE NAV */
+.mobile-nav{position:fixed;inset:0;background:var(--black);z-index:5000;display:none;flex-direction:column;padding:80px 40px 40px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:'Playfair Display',serif;font-size:28px;color:var(--white);text-decoration:none;padding:16px 0;border-bottom:1px solid var(--border);transition:color 0.3s}
+.mobile-nav a:hover{color:var(--gold)}
+.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer}
+
+/* RESPONSIVE */
+@media(max-width:1200px){.footer-grid{grid-template-columns:1fr 1fr}.advantages-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1100px){.admin-sidebar{position:fixed;left:-260px;z-index:101;transition:left 0.3s;top:0}.admin-sidebar.open{left:0;box-shadow:4px 0 24px rgba(0,0,0,0.5)}.admin-burger{display:flex}}
+@media(min-width:1101px){.admin-sidebar-overlay{display:none!important}}
+@media(max-width:900px){.about-grid,.booking-grid,.contacts-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-item.wide{grid-column:span 1}.stats-cards{grid-template-columns:repeat(2,1fr)}.admin-form-grid,.profile-form{grid-template-columns:1fr}.admin-form-group.full,.profile-form .form-group.full{grid-column:span 1}.form-grid{grid-template-columns:1fr}#sec-dashboard>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
+@media(max-width:768px){nav{display:none}.burger{display:flex}.header-inner{padding:0 20px}.section-inner{padding:0 20px}.cabinet-inner{padding:80px 20px 40px}.admin-content{padding:18px}.admin-header{padding:16px 18px}.admin-header h2{font-size:18px}.admin-header-admin-label{display:none}.stats-cards{grid-template-columns:1fr 1fr;gap:10px}.stat-card{padding:16px}.stat-card-value{font-size:28px}.admin-table-head{padding:16px}.admin-search{width:100%}.admin-table-actions{width:100%}.admin-table-actions select,.admin-table-actions input{flex:1}
+  /* CARD-STYLE TABLES ON MOBILE */
+  .admin-table-wrap .admin-table thead{display:none}
+  .admin-table-wrap .admin-table, .admin-table-wrap .admin-table tbody, .admin-table-wrap .admin-table tr, .admin-table-wrap .admin-table td{display:block;width:100%}
+  .admin-table-wrap .admin-table tr{background:var(--dark3);border:1px solid var(--border);margin-bottom:12px;padding:6px 0}
+  .admin-table-wrap .admin-table tr:hover td{background:none}
+  .admin-table-wrap .admin-table td{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);text-align:right;white-space:normal;word-break:break-word}
+  .admin-table-wrap .admin-table td:last-child{border-bottom:none}
+  .admin-table-wrap .admin-table td[colspan]{display:block;text-align:center}
+  .admin-table-wrap .admin-table td::before{content:attr(data-label);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:0.8;text-align:left;flex-shrink:0;margin-right:12px}
+  .admin-table-wrap .admin-table td:not([data-label])::before{content:none}
+  .admin-table-wrap .admin-table .table-actions{justify-content:flex-end;width:100%}
+  .admin-table-wrap div[style*="overflow-x:auto"]{overflow-x:visible}
+}
+@media(max-width:480px){.advantages-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.stats-cards{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.booking-form{padding:24px}.admin-sidebar{width:230px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo" onclick="scrollToTop()">O'ZBEGIM<span>Ресторан & Банкетный Комплекс</span></a>
+    <nav>
+      <a href="#about" onclick="smoothScroll('about')">О нас</a>
+      <a href="#menu" onclick="smoothScroll('menu')">Меню</a>
+      <a href="#gallery" onclick="smoothScroll('gallery')">Галерея</a>
+      <a href="#booking" onclick="smoothScroll('booking')">Бронирование</a>
+      <a href="#contacts" onclick="smoothScroll('contacts')">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <div class="social-links">
+        <a href="https://t.me/timenub" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://instagram.com/sardorbekovusen" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div id="authBtns">
+        <button class="btn-outline-gold" onclick="openAuth('login')">Войти</button>
+      </div>
+      <div class="user-menu" id="userMenu">
+        <button class="user-name-btn" onclick="toggleUserDropdown()">
+          <i class="fas fa-user-circle"></i>
+          <span id="userNameDisplay">Гость</span>
+          <i class="fas fa-chevron-down" style="font-size:10px"></i>
+          <div class="notif-badge" id="notifBadge" style="display:none">0</div>
+        </button>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="#" onclick="openCabinet()"><i class="fas fa-tachometer-alt"></i> Личный кабинет</a>
+          <a href="#" onclick="openCabinet('bookings')"><i class="fas fa-calendar-check"></i> Мои бронирования</a>
+          <a href="#" onclick="openCabinet('notifs')"><i class="fas fa-bell"></i> Уведомления</a>
+          <hr>
+          <button onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+        </div>
+      </div>
+    </div>
+    <div class="burger" onclick="toggleMobileNav()" id="burgerBtn">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="toggleMobileNav()"><i class="fas fa-times"></i></button>
+  <a href="#" onclick="smoothScroll('about');toggleMobileNav()">О нас</a>
+  <a href="#" onclick="smoothScroll('menu');toggleMobileNav()">Меню</a>
+  <a href="#" onclick="smoothScroll('gallery');toggleMobileNav()">Галерея</a>
+  <a href="#" onclick="smoothScroll('booking');toggleMobileNav()">Бронирование</a>
+  <a href="#" onclick="smoothScroll('contacts');toggleMobileNav()">Контакты</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-slide active" style="background:linear-gradient(135deg,#0a0601 0%,#1a1000 40%,#0a0601 100%)"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Ташкент • С 2010 года</div>
+    <h1 class="hero-title">Добро пожаловать<br>в <em>O'ZBEGIM</em></h1>
+    <p class="hero-subtitle">Место, где рождаются незабываемые торжества</p>
+    <p class="hero-desc">Премиальный ресторан и свадебный банкетный комплекс в сердце Ташкента. Национальная кухня, роскошные залы и безупречный сервис для ваших особых событий.</p>
+    <div class="hero-buttons">
+      <button class="btn-hero-primary" onclick="requireAuthBooking('Свадьба')"><i class="fas fa-rings-wedding"></i> &nbsp;Забронировать свадьбу</button>
+      <button class="btn-hero-primary" onclick="requireAuthBooking('Банкет')"><i class="fas fa-glass-cheers"></i> &nbsp;Забронировать банкет</button>
+      <button class="btn-hero-secondary" onclick="smoothScroll('menu')"><i class="fas fa-utensils"></i> &nbsp;Посмотреть меню</button>
+      <button class="btn-hero-secondary" onclick="smoothScroll('contacts')"><i class="fas fa-phone"></i> &nbsp;Связаться с нами</button>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="smoothScroll('advantages')">
+    <span>Листайте</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section id="advantages" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Наши услуги</div>
+      <h2 class="section-title">Всё для <em>вашего торжества</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="advantages-grid">
+      <div class="advantage-item">
+        <div class="adv-icon"><i class="fas fa-rings-wedding"></i></div>
+        <h3 class="adv-title">Свадьбы</h3>
+        <p class="adv-desc">Организуем свадьбу мечты с декором, музыкой и изысканным банкетом до 500 гостей в роскошных залах</p>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-icon"><i class="fas fa-glass-cheers"></i></div>
+        <h3 class="adv-title">Банкеты</h3>
+        <p class="adv-desc">Торжественные банкеты для любого повода: юбилеи, семейные праздники, корпоративные мероприятия</p>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-icon"><i class="fas fa-briefcase"></i></div>
+        <h3 class="adv-title">Корпоративы</h3>
+        <p class="adv-desc">Деловые мероприятия, корпоративные ужины и тимбилдинги в атмосфере элегантности</p>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-icon"><i class="fas fa-birthday-cake"></i></div>
+        <h3 class="adv-title">Дни рождения</h3>
+        <p class="adv-desc">Незабываемые дни рождения с индивидуальным декором, тортом и эксклюзивной программой</p>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-icon"><i class="fas fa-drumstick-bite"></i></div>
+        <h3 class="adv-title">Национальная кухня</h3>
+        <p class="adv-desc">Аутентичные узбекские блюда: плов, шашлык, самса — готовятся по традиционным рецептам</p>
+      </div>
+      <div class="advantage-item">
+        <div class="adv-icon"><i class="fas fa-archway"></i></div>
+        <h3 class="adv-title">Большой банкетный зал</h3>
+        <p class="adv-desc">Просторный зал на 500+ гостей с современным оборудованием, сценой и профессиональным освещением</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-block">
+        <div class="about-main-img">
+          <div style="text-align:center">
+            <div class="img-placeholder">O'Z</div>
+            <div style="font-size:13px;color:var(--gold);letter-spacing:3px;margin-top:8px">РЕСТОРАН</div>
+          </div>
+        </div>
+        <div class="about-accent-box">
+          <div class="num">14</div>
+          <div class="label">Лет опыта</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-eyebrow">История</div>
+        <h2 class="about-title">О ресторане<em>O'ZBEGIM</em></h2>
+        <p class="about-text">O'ZBEGIM — это не просто ресторан. Это место, где создаются воспоминания на всю жизнь. С 2010 года мы являемся одним из ведущих банкетных комплексов Ташкента, специализирующихся на проведении свадеб, банкетов и торжественных мероприятий.</p>
+        <p class="about-text">Наша миссия — сделать каждое событие уникальным и незабываемым. Мы сочетаем богатые традиции узбекского гостеприимства с современными стандартами обслуживания.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-users"></i></div>
+            <div class="about-feature-text">
+              <h4>Вместимость до 500 гостей</h4>
+              <p>Несколько залов разного размера под любое мероприятие</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-chef-hat" style="font-family:sans-serif">👨‍🍳</i></div>
+            <div class="about-feature-text">
+              <h4>Опытные повара</h4>
+              <p>Команда профессионалов с многолетним опытом</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-star"></i></div>
+            <div class="about-feature-text">
+              <h4>Индивидуальный подход</h4>
+              <p>Каждое мероприятие планируется с учётом ваших пожеланий</p>
+            </div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-num">2000+</div>
+            <div class="stat-label">Мероприятий</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Гостей</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">14</div>
+            <div class="stat-label">Лет опыта</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Кухня</div>
+      <h2 class="section-title">Наше <em>меню</em></h2>
+      <div class="section-divider"></div>
+      <p class="section-desc">Традиционные узбекские блюда и изысканные закуски для ваших торжеств</p>
+    </div>
+    <div class="menu-cats" id="menuCats"></div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Интерьер и события</div>
+      <h2 class="section-title">Наша <em>галерея</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" onclick="filterGallery('all',this)">Все</button>
+      <button class="gallery-tab" onclick="filterGallery('wedding',this)">Свадьбы</button>
+      <button class="gallery-tab" onclick="filterGallery('banquet',this)">Банкеты</button>
+      <button class="gallery-tab" onclick="filterGallery('interior',this)">Интерьер</button>
+      <button class="gallery-tab" onclick="filterGallery('food',this)">Блюда</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="section">
+  <div class="section-inner">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <div class="section-eyebrow">Онлайн-бронирование</div>
+        <h2>Забронируйте<em>ваше событие</em></h2>
+        <p>Заполните форму и наши менеджеры свяжутся с вами в течение 2 часов для подтверждения деталей вашего мероприятия.</p>
+        <div class="booking-perks">
+          <div class="booking-perk">
+            <div class="booking-perk-icon"><i class="fas fa-clock"></i></div>
+            <div class="booking-perk-text"><strong>Быстрое подтверждение</strong>Ответ в течение 2 часов</div>
+          </div>
+          <div class="booking-perk">
+            <div class="booking-perk-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="booking-perk-text"><strong>Гарантия даты</strong>Бронирование фиксирует вашу дату</div>
+          </div>
+          <div class="booking-perk">
+            <div class="booking-perk-icon"><i class="fas fa-headset"></i></div>
+            <div class="booking-perk-text"><strong>Персональный менеджер</strong>Индивидуальная поддержка</div>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form">
+        <h3>Форма бронирования</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Ваше имя *</label>
+            <input type="text" id="bName" class="form-input" placeholder="Введите имя">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Телефон *</label>
+            <input type="tel" id="bPhone" class="form-input" placeholder="+998 90 000 00 00">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Дата мероприятия *</label>
+            <input type="date" id="bDate" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Время</label>
+            <input type="time" id="bTime" class="form-input" value="18:00">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Количество гостей *</label>
+            <input type="number" id="bGuests" class="form-input" placeholder="Кол-во гостей" min="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Тип мероприятия *</label>
+            <select id="bType" class="form-select">
+              <option value="">Выберите тип</option>
+              <option value="Свадьба">Свадьба</option>
+              <option value="Банкет">Банкет</option>
+              <option value="Корпоратив">Корпоратив</option>
+              <option value="День рождения">День рождения</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Комментарий</label>
+            <textarea id="bComment" class="form-textarea" placeholder="Ваши пожелания и дополнительная информация..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitBooking()"><i class="fas fa-paper-plane"></i> &nbsp;Отправить заявку</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Связь</div>
+      <h2 class="section-title">Наши <em>контакты</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contacts-grid">
+      <div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-item-text">
+              <h4>Адрес</h4>
+              <p>Ташкент, Республика Узбекистан<br>Банкетный комплекс O'ZBEGIM</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-item-text">
+              <h4>Телефон</h4>
+              <a href="tel:+998901234567">+998 90 123 45 67</a>
+              <a href="tel:+998711234567">+998 71 123 45 67</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-item-text">
+              <h4>Email</h4>
+              <a href="mailto:info@ozbegim.uz">info@ozbegim.uz</a>
+            </div>
+          </div>
+        </div>
+        <div class="social-block">
+          <h4>Мы в социальных сетях</h4>
+          <div class="social-btns">
+            <a href="https://t.me/timenub" target="_blank" class="social-btn"><i class="fab fa-telegram"></i> @timenub</a>
+            <a href="https://instagram.com/sardorbekovusen" target="_blank" class="social-btn"><i class="fab fa-instagram"></i> @sardorbekovusen</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-placeholder">
+          <div style="text-align:center">
+            <i class="fas fa-map-marked-alt" style="font-size:48px;color:var(--gold);opacity:0.4;margin-bottom:16px"></i>
+            <p style="color:var(--text-muted);font-size:14px">Ташкент, Узбекистан</p>
+            <p style="color:var(--text-muted);font-size:12px;margin-top:8px">O'ZBEGIM Банкетный комплекс</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">O'ZBEGIM<span>Ресторан & Банкетный Комплекс</span></span>
+        <p style="margin-top:16px">Премиальный ресторан и свадебный банкетный комплекс в Ташкенте. Незабываемые торжества с 2010 года.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#" onclick="smoothScroll('about')">О нас</a></li>
+          <li><a href="#" onclick="smoothScroll('menu')">Меню</a></li>
+          <li><a href="#" onclick="smoothScroll('gallery')">Галерея</a></li>
+          <li><a href="#" onclick="smoothScroll('booking')">Бронирование</a></li>
+          <li><a href="#" onclick="smoothScroll('contacts')">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#" onclick="requireAuthBooking('Свадьба')">Свадьбы</a></li>
+          <li><a href="#" onclick="requireAuthBooking('Банкет')">Банкеты</a></li>
+          <li><a href="#" onclick="requireAuthBooking('Корпоратив')">Корпоративы</a></li>
+          <li><a href="#" onclick="requireAuthBooking('День рождения')">Дни рождения</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+998901234567">+998 90 123 45 67</a></li>
+          <li><a href="mailto:info@ozbegim.uz">info@ozbegim.uz</a></li>
+          <li><a href="https://t.me/timenub" target="_blank">Telegram: @timenub</a></li>
+          <li><a href="https://instagram.com/sardorbekovusen" target="_blank">Instagram: @sardorbekovusen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 O'ZBEGIM. Все права защищены. | <a href="#" onclick="openAdminLogin()" style="color:var(--text-muted);text-decoration:none;font-size:11px">Администратор</a></p>
+      <div class="footer-social">
+        <a href="https://t.me/timenub" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://instagram.com/sardorbekovusen" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAuth()"><i class="fas fa-times"></i></button>
+    <h2 class="modal-title">O'ZBEGIM</h2>
+    <p class="modal-subtitle">Войдите или создайте аккаунт для бронирования</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabLogin" onclick="switchAuthTab('login')">Войти</button>
+      <button class="modal-tab" id="tabReg" onclick="switchAuthTab('register')">Регистрация</button>
+    </div>
+    <!-- LOGIN -->
+    <div id="loginForm">
+      <div class="auth-form">
+        <div class="form-group">
+          <label class="form-label">Email или телефон</label>
+          <input type="text" id="loginEmail" class="form-input" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Пароль</label>
+          <input type="password" id="loginPass" class="form-input" placeholder="Ваш пароль">
+        </div>
+        <div class="auth-error" id="loginError"></div>
+        <button class="auth-btn" onclick="doLogin()">Войти</button>
+      </div>
+    </div>
+    <!-- REGISTER -->
+    <div id="regForm" style="display:none">
+      <div class="auth-form">
+        <div class="form-group">
+          <label class="form-label">Имя и фамилия</label>
+          <input type="text" id="regName" class="form-input" placeholder="Введите имя">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="regEmail" class="form-input" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Телефон</label>
+          <input type="tel" id="regPhone" class="form-input" placeholder="+998 90 000 00 00">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Пароль</label>
+          <input type="password" id="regPass" class="form-input" placeholder="Придумайте пароль">
+        </div>
+        <div class="auth-error" id="regError"></div>
+        <div class="auth-success" id="regSuccess"></div>
+        <button class="auth-btn" onclick="doRegister()">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal-overlay" id="adminAuthModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAdminLogin()"><i class="fas fa-times"></i></button>
+    <h2 class="modal-title" style="color:var(--gold)">Администратор</h2>
+    <p class="modal-subtitle">Вход в панель управления O'ZBEGIM</p>
+    <div class="auth-form" style="margin-top:16px">
+      <div class="form-group">
+        <label class="form-label">Логин</label>
+        <input type="text" id="adminLogin" class="form-input" placeholder="admin">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Пароль</label>
+        <input type="password" id="adminPass" class="form-input" placeholder="Пароль">
+      </div>
+      <div class="auth-error" id="adminError"></div>
+      <button class="auth-btn" onclick="doAdminLogin()"><i class="fas fa-shield-alt"></i> Войти в панель</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="confirm-modal" id="confirmModal">
+  <div class="confirm-box">
+    <h3 id="confirmTitle">Подтверждение</h3>
+    <p id="confirmText">Вы уверены?</p>
+    <div class="confirm-btns">
+      <button class="btn-gold" id="confirmYes">Подтвердить</button>
+      <button class="btn-outline-gold" onclick="closeConfirm()">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="detail-modal" id="detailModal">
+  <div class="detail-box">
+    <button class="modal-close" onclick="closeDetail()"><i class="fas fa-times"></i></button>
+    <h2 class="modal-title" style="margin-bottom:24px">Детали заявки</h2>
+    <div id="detailContent"></div>
+    <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap" id="detailActions"></div>
+  </div>
+</div>
+
+<!-- PERSONAL CABINET -->
+<div id="cabinet">
+  <div style="position:fixed;top:0;left:0;right:0;background:var(--black);border-bottom:1px solid var(--border);padding:16px 40px;z-index:10;display:flex;align-items:center;justify-content:space-between">
+    <span class="logo">O'ZBEGIM<span>Личный кабинет</span></span>
+    <button class="btn-outline-gold" onclick="closeCabinet()"><i class="fas fa-times"></i> Закрыть</button>
+  </div>
+  <div class="cabinet-inner">
+    <div class="cabinet-header">
+      <div>
+        <h1 class="cabinet-title">Личный кабинет</h1>
+        <p style="color:var(--text-muted);font-size:14px;margin-top:4px" id="cabinetUserName"></p>
+      </div>
+    </div>
+    <div class="cabinet-tabs">
+      <button class="cabinet-tab active" onclick="switchCabinetTab('bookings',this)">Мои бронирования</button>
+      <button class="cabinet-tab" onclick="switchCabinetTab('notifs',this)">Уведомления <span id="cabinetNotifCount" style="color:var(--gold)"></span></button>
+      <button class="cabinet-tab" onclick="switchCabinetTab('profile',this)">Профиль</button>
+    </div>
+    <div class="cabinet-section active" id="cab-bookings">
+      <div id="cabinetBookingsList"></div>
+    </div>
+    <div class="cabinet-section" id="cab-notifs">
+      <div id="cabinetNotifsList"></div>
+    </div>
+    <div class="cabinet-section" id="cab-profile">
+      <div class="profile-form">
+        <div class="form-group">
+          <label class="form-label">Имя</label>
+          <input type="text" id="profileName" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="profileEmail" class="form-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Телефон</label>
+          <input type="tel" id="profilePhone" class="form-input">
+        </div>
+        <div class="form-group full">
+          <button class="btn-gold" onclick="saveProfile()">Сохранить изменения</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel">
+  <div class="admin-layout">
+    <div class="admin-sidebar-overlay" id="adminSidebarOverlay" onclick="toggleAdminSidebar()"></div>
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-logo">
+        <h1>O'ZBEGIM</h1>
+        <p>Панель управления</p>
+      </div>
+      <nav class="admin-nav">
+        <div class="admin-nav-item active" onclick="adminNav('dashboard',this)"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+        <div class="admin-nav-item" onclick="adminNav('bookings',this)"><i class="fas fa-calendar-check"></i> Заявки</div>
+        <div class="admin-nav-item" onclick="adminNav('users',this)"><i class="fas fa-users"></i> Пользователи</div>
+        <div class="admin-nav-item" onclick="adminNav('menu',this)"><i class="fas fa-utensils"></i> Меню</div>
+        <div class="admin-nav-item" onclick="adminNav('gallery',this)"><i class="fas fa-images"></i> Галерея</div>
+        <div class="admin-nav-item" onclick="adminNav('analytics',this)"><i class="fas fa-chart-bar"></i> Аналитика</div>
+        <div style="margin-top:auto;padding:16px;border-top:1px solid var(--border)">
+          <button onclick="logoutAdmin()" style="width:100%;background:#c0392b;color:#fff;border:none;padding:12px;font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:Raleway,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px">
+            <i class="fas fa-sign-out-alt"></i> Выйти
+          </button>
+        </div>
+      </nav>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-header">
+        <div style="display:flex;align-items:center;gap:14px">
+          <button class="admin-burger" id="adminBurgerBtn" onclick="toggleAdminSidebar()" aria-label="Меню"><i class="fas fa-bars"></i></button>
+          <h2 id="adminPageTitle">Dashboard</h2>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="admin-header-admin-label" style="font-size:13px;color:var(--text-muted)">Администратор: <strong style="color:var(--gold)">admin</strong></span>
+
+        </div>
+      </div>
+      <div class="admin-content">
+        <!-- DASHBOARD -->
+        <div class="admin-section active" id="sec-dashboard">
+          <div class="stats-cards" id="dashCards"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="admin-table-wrap">
+              <div class="admin-table-head"><h3>Последние заявки</h3></div>
+              <table class="admin-table"><thead><tr><th>Клиент</th><th>Тип</th><th>Дата</th><th>Статус</th></tr></thead><tbody id="recentBookingsTbl"></tbody></table>
+            </div>
+            <div class="admin-table-wrap">
+              <div class="admin-table-head"><h3>Новые пользователи</h3></div>
+              <table class="admin-table"><thead><tr><th>Имя</th><th>Email</th><th>Дата</th></tr></thead><tbody id="recentUsersTbl"></tbody></table>
+            </div>
+          </div>
+        </div>
+        <!-- BOOKINGS -->
+        <div class="admin-section" id="sec-bookings">
+          <div class="admin-table-wrap">
+            <div class="admin-table-head">
+              <h3>Управление заявками</h3>
+              <div class="admin-table-actions">
+                <input type="text" class="admin-search" id="bookingSearch" placeholder="Поиск..." oninput="renderAdminBookings()">
+                <select class="admin-filter" id="bookingFilter" onchange="renderAdminBookings()">
+                  <option value="">Все статусы</option>
+                  <option value="pending">Ожидание</option>
+                  <option value="confirmed">Подтверждено</option>
+                  <option value="rejected">Отклонено</option>
+                  <option value="completed">Завершено</option>
+                </select>
+              </div>
+            </div>
+            <div style="overflow-x:auto">
+              <table class="admin-table"><thead><tr><th>#</th><th>Клиент</th><th>Телефон</th><th>Тип</th><th>Дата</th><th>Гостей</th><th>Статус</th><th>Действия</th></tr></thead><tbody id="adminBookingsTbl"></tbody></table>
+            </div>
+          </div>
+        </div>
+        <!-- USERS -->
+        <div class="admin-section" id="sec-users">
+          <div class="admin-table-wrap">
+            <div class="admin-table-head">
+              <h3>Пользователи</h3>
+              <div class="admin-table-actions">
+                <input type="text" class="admin-search" id="userSearch" placeholder="Поиск..." oninput="renderAdminUsers()">
+              </div>
+            </div>
+            <div style="overflow-x:auto">
+              <table class="admin-table"><thead><tr><th>#</th><th>Имя</th><th>Email</th><th>Телефон</th><th>Заявок</th><th>Статус</th><th>Действия</th></tr></thead><tbody id="adminUsersTbl"></tbody></table>
+            </div>
+          </div>
+        </div>
+        <!-- MENU -->
+        <div class="admin-section" id="sec-menu">
+          <div class="admin-table-wrap" style="margin-bottom:24px">
+            <div class="admin-table-head">
+              <h3>Управление меню</h3>
+              <button class="btn-admin-add" onclick="showMenuForm()"><i class="fas fa-plus"></i> Добавить блюдо</button>
+            </div>
+            <div style="overflow-x:auto">
+              <table class="admin-table"><thead><tr><th>#</th><th>Название</th><th>Категория</th><th>Цена</th><th>Описание</th><th>Действия</th></tr></thead><tbody id="adminMenuTbl"></tbody></table>
+            </div>
+          </div>
+          <div id="menuFormWrap" style="display:none">
+            <div class="admin-table-wrap">
+              <div class="admin-table-head"><h3 id="menuFormTitle">Добавить блюдо</h3></div>
+              <div class="admin-form-wrap">
+                <div class="admin-form-grid">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Название блюда</label>
+                    <input type="text" id="mName" class="form-input" placeholder="Название">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Категория</label>
+                    <select id="mCat" class="form-select">
+                      <option>Салаты</option><option>Супы</option><option>Национальные блюда</option><option>Плов</option><option>Шашлыки</option><option>Горячие блюда</option><option>Напитки</option><option>Десерты</option>
+                    </select>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Цена (сум)</label>
+                    <input type="number" id="mPrice" class="form-input" placeholder="Цена">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Эмодзи (иконка)</label>
+                    <input type="text" id="mIcon" class="form-input" placeholder="🍽️">
+                  </div>
+                  <div class="admin-form-group full">
+                    <label class="admin-form-label">Описание</label>
+                    <textarea id="mDesc" class="form-textarea" placeholder="Описание блюда"></textarea>
+                  </div>
+                </div>
+                <div style="display:flex;gap:12px;margin-top:16px">
+                  <button class="btn-gold" onclick="saveMenuItem()">Сохранить</button>
+                  <button class="btn-outline-gold" onclick="cancelMenuForm()">Отмена</button>
+                </div>
+                <input type="hidden" id="mEditId">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- GALLERY ADMIN -->
+        <div class="admin-section" id="sec-gallery">
+          <div class="admin-table-wrap" style="margin-bottom:24px">
+            <div class="admin-table-head">
+              <h3>Управление галереей</h3>
+              <button class="btn-admin-add" onclick="showGalleryForm()"><i class="fas fa-plus"></i> Добавить</button>
+            </div>
+            <div id="adminGalleryGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;padding:24px"></div>
+          </div>
+          <div id="galleryFormWrap" style="display:none">
+            <div class="admin-table-wrap">
+              <div class="admin-table-head"><h3>Добавить запись в галерею</h3></div>
+              <div class="admin-form-wrap">
+                <div class="admin-form-grid">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Название</label>
+                    <input type="text" id="gName" class="form-input" placeholder="Название фото">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Категория</label>
+                    <select id="gCat" class="form-select">
+                      <option value="wedding">Свадьбы</option>
+                      <option value="banquet">Банкеты</option>
+                      <option value="interior">Интерьер</option>
+                      <option value="food">Блюда</option>
+                    </select>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Иконка/Эмодзи</label>
+                    <input type="text" id="gIcon" class="form-input" placeholder="🏛️">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label">Описание</label>
+                    <input type="text" id="gDesc" class="form-input" placeholder="Краткое описание">
+                  </div>
+                </div>
+                <div style="display:flex;gap:12px;margin-top:16px">
+                  <button class="btn-gold" onclick="saveGalleryItem()">Сохранить</button>
+                  <button class="btn-outline-gold" onclick="cancelGalleryForm()">Отмена</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ANALYTICS -->
+        <div class="admin-section" id="sec-analytics">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+            <div class="chart-wrap">
+              <div class="chart-title">Заявки по месяцам</div>
+              <div class="bar-chart" id="chartMonths"></div>
+            </div>
+            <div class="chart-wrap">
+              <div class="chart-title">Популярные услуги</div>
+              <div class="bar-chart" id="chartServices"></div>
+            </div>
+            <div class="chart-wrap">
+              <div class="chart-title">Статусы заявок</div>
+              <div class="bar-chart" id="chartStatuses"></div>
+            </div>
+            <div class="chart-wrap">
+              <div class="chart-title">Пользователи по месяцам</div>
+              <div class="bar-chart" id="chartUsers"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+// ============================================================
+// DATA STORE (localStorage) — СТРОГОЕ НАДЁЖНОЕ ХРАНЕНИЕ
+// ============================================================
+const DB_PREFIX = 'ozbegim_';
+const DB_BACKUP_PREFIX = 'ozbegim_backup_';
+let dbStorageWarned = false;
+
+function dbWarnStorageIssue() {
+  if (dbStorageWarned) return;
+  dbStorageWarned = true;
+  try { showToast('Внимание: проблема с сохранением данных в браузере. Освободите память или включите cookies.', 'error'); } catch {}
+}
+
+const DB = {
+  get(key) {
+    try {
+      const raw = localStorage.getItem(DB_PREFIX + key);
+      if (raw === null) return null;
+      return JSON.parse(raw);
+    } catch (e) {
+      // Основное хранилище повреждено — пробуем восстановить из резервной копии
+      try {
+        const backupRaw = localStorage.getItem(DB_BACKUP_PREFIX + key);
+        if (backupRaw !== null) {
+          const restored = JSON.parse(backupRaw);
+          try { localStorage.setItem(DB_PREFIX + key, backupRaw); } catch {}
+          console.warn('DB: ключ "'+key+'" восстановлен из резервной копии');
+          return restored;
+        }
+      } catch (e2) {}
+      console.error('DB.get error for key', key, e);
+      return null;
+    }
+  },
+  set(key, val) {
+    const serialized = JSON.stringify(val);
+    let primaryOk = false;
+    try {
+      localStorage.setItem(DB_PREFIX + key, serialized);
+      primaryOk = true;
+    } catch (e) {
+      console.error('DB.set: ошибка записи основного хранилища для', key, e);
+      dbWarnStorageIssue();
+    }
+    // ВЕРИФИКАЦИЯ: перечитываем сразу после записи, чтобы убедиться, что данные реально сохранились
+    if (primaryOk) {
+      try {
+        const verify = localStorage.getItem(DB_PREFIX + key);
+        if (verify !== serialized) {
+          console.error('DB.set: верификация не прошла для', key, '- повторная попытка записи');
+          try { localStorage.setItem(DB_PREFIX + key, serialized); } catch (e3) { dbWarnStorageIssue(); }
+        }
+      } catch (e4) {}
+    }
+    // РЕЗЕРВНАЯ КОПИЯ: дублируем данные отдельным ключом на случай повреждения основного
+    try {
+      localStorage.setItem(DB_BACKUP_PREFIX + key, serialized);
+    } catch (e) {
+      console.error('DB.set: ошибка записи резервной копии для', key, e);
+    }
+    // Дополнительная защита: дублируем в sessionStorage (переживает только сессию, но спасает при сбое localStorage в моменте)
+    try { sessionStorage.setItem(DB_PREFIX + key, serialized); } catch (e) {}
+    return primaryOk;
+  },
+  del(key) {
+    try { localStorage.removeItem(DB_PREFIX + key); } catch (e) {}
+    try { localStorage.removeItem(DB_BACKUP_PREFIX + key); } catch (e) {}
+    try { sessionStorage.removeItem(DB_PREFIX + key); } catch (e) {}
+  }
+};
+
+function initDB() {
+  if (!DB.get('users')) DB.set('users', []);
+  if (!DB.get('bookings')) DB.set('bookings', []);
+  if (!DB.get('notifications')) DB.set('notifications', []);
+  if (!DB.get('menu')) DB.set('menu', getDefaultMenu());
+  if (!DB.get('gallery')) DB.set('gallery', getDefaultGallery());
+}
+
+// Безопасные геттеры/сеттеры: всегда возвращают массив, никогда не роняют данные молча
+function getUsers() { return DB.get('users') || [] }
+function setUsers(u) { return DB.set('users', u) }
+function getBookings() { return DB.get('bookings') || [] }
+function setBookings(b) { return DB.set('bookings', b) }
+function getNotifs() { return DB.get('notifications') || [] }
+function setNotifs(n) { return DB.set('notifications', n) }
+function getMenu() { return DB.get('menu') || [] }
+function setMenu(m) { return DB.set('menu', m) }
+function getGallery() { return DB.get('gallery') || [] }
+function setGallery(g) { return DB.set('gallery', g) }
+
+let currentUser = DB.get('session') || null;
+let currentAdmin = DB.get('adminSession') || false;
+
+// ============================================================
+// DEFAULT DATA
+// ============================================================
+function getDefaultMenu() {
+  return [
+    {id:1,name:"Ахта-Чучвара",cat:"Супы",price:35000,desc:"Традиционный узбекский суп с пельменями, говядиной и свежей зеленью",icon:"🍲"},
+    {id:2,name:"Шурпа",cat:"Супы",price:30000,desc:"Наваристый бараний суп с овощами и душистыми специями",icon:"🥘"},
+    {id:3,name:"Мастава",cat:"Супы",price:28000,desc:"Рисовый суп на мясном бульоне с помидорами и картофелем",icon:"🍜"},
+    {id:4,name:"Ферганский плов",cat:"Плов",price:55000,desc:"Классический плов по ферганскому рецепту с молодым барашком и спелой морковью",icon:"🍚"},
+    {id:5,name:"Свадебный плов",cat:"Плов",price:75000,desc:"Торжественный плов на хлопковом масле с изюмом и нутом — для особых случаев",icon:"✨"},
+    {id:6,name:"Самаркандский плов",cat:"Плов",price:65000,desc:"Самаркандский плов с особой технологией приготовления",icon:"🥘"},
+    {id:7,name:"Люля-кебаб",cat:"Шашлыки",price:45000,desc:"Сочный рубленый шашлык из баранины с луком и специями",icon:"🍢"},
+    {id:8,name:"Шашлык из говядины",cat:"Шашлыки",price:50000,desc:"Маринованная говядина на углях, поданная со свежими овощами",icon:"🥩"},
+    {id:9,name:"Бастурма",cat:"Шашлыки",price:60000,desc:"Вяленая говядина с пряностями — деликатес нашего стола",icon:"🍖"},
+    {id:10,name:"Самса тандырная",cat:"Национальные блюда",price:15000,desc:"Хрустящая самса с бараниной из тандырной печи",icon:"🥟"},
+    {id:11,name:"Дамлама",cat:"Национальные блюда",price:45000,desc:"Тушёное мясо с овощами на пару — традиционное узбекское блюдо",icon:"🍲"},
+    {id:12,name:"Нарын",cat:"Национальные блюда",price:38000,desc:"Домашняя лапша с тонко нарезанным мясом и луком",icon:"🍝"},
+    {id:13,name:"Ачик-чучук",cat:"Салаты",price:18000,desc:"Лёгкий томатный салат с луком и свежей зеленью",icon:"🥗"},
+    {id:14,name:"Узбекский салат",cat:"Салаты",price:22000,desc:"Сезонные овощи с оливковым маслом и специями",icon:"🥙"},
+    {id:15,name:"Зелёный чай",cat:"Напитки",price:8000,desc:"Классический узбекский зелёный чай в чайнике",icon:"🍵"},
+    {id:16,name:"Компот из сухофруктов",cat:"Напитки",price:12000,desc:"Домашний компот из абрикоса, изюма и инжира",icon:"🍹"},
+    {id:17,name:"Нишолда",cat:"Десерты",price:20000,desc:"Традиционный узбекский десерт из взбитых белков с сахаром",icon:"🍮"},
+    {id:18,name:"Халва",cat:"Десерты",price:18000,desc:"Домашняя узбекская халва с орехами и мёдом",icon:"🍯"}
+  ];
+}
+function getDefaultGallery() {
+  return [
+    {id:1,name:"Свадебный зал",cat:"wedding",icon:"💒",desc:"Главный банкетный зал",wide:true},
+    {id:2,name:"Свадебный декор",cat:"wedding",icon:"🌸",desc:"Украшение столов"},
+    {id:3,name:"Торжество",cat:"banquet",icon:"🥂",desc:"Банкетный вечер"},
+    {id:4,name:"Главный зал",cat:"interior",icon:"🏛️",desc:"Интерьер ресторана",tall:true},
+    {id:5,name:"VIP-зал",cat:"interior",icon:"✨",desc:"Малый банкетный зал"},
+    {id:6,name:"Ферганский плов",cat:"food",icon:"🍚",desc:"Наш фирменный плов"},
+    {id:7,name:"Свадебный торт",cat:"wedding",icon:"🎂",desc:"Торт на заказ",wide:true},
+    {id:8,name:"Шашлыки",cat:"food",icon:"🍢",desc:"Блюда на углях"},
+    {id:9,name:"Корпоративный зал",cat:"banquet",icon:"💼",desc:"Деловые мероприятия"},
+    {id:10,name:"Декор зала",cat:"interior",icon:"🌿",desc:"Живые цветы"},
+    {id:11,name:"Праздничный стол",cat:"food",icon:"🍽️",desc:"Банкетная сервировка"},
+    {id:12,name:"Церемония",cat:"wedding",icon:"💍",desc:"Церемония бракосочетания"}
+  ];
+}
+
+// ============================================================
+// SCROLL & HEADER
+// ============================================================
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+});
+function smoothScroll(id) { document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
+function scrollToTop() { window.scrollTo({top:0,behavior:'smooth'}); return false; }
+
+// ============================================================
+// AUTH
+// ============================================================
+let afterAuthCallback = null;
+
+function openAuth(tab='login') {
+  document.getElementById('authModal').classList.add('open');
+  switchAuthTab(tab);
+}
+function closeAuth() { document.getElementById('authModal').classList.remove('open'); }
+
+function switchAuthTab(tab) {
+  document.getElementById('loginForm').style.display = tab==='login'?'block':'none';
+  document.getElementById('regForm').style.display = tab==='register'?'block':'none';
+  document.getElementById('tabLogin').classList.toggle('active', tab==='login');
+  document.getElementById('tabReg').classList.toggle('active', tab==='register');
+  document.getElementById('loginError').style.display='none';
+  document.getElementById('regError').style.display='none';
+  document.getElementById('regSuccess').style.display='none';
+}
+
+function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  const err = document.getElementById('loginError');
+  err.style.display='none';
+  if (!email || !pass) { showErr(err,'Заполните все поля'); return; }
+
+  // ADMIN CHECK — если ввёл admin/admin123, открываем админ панель
+  if (email === 'admin' && pass === 'admin123') {
+    currentAdmin = true;
+    DB.set('adminSession', true);
+    closeAuth();
+    openAdmin();
+    showToast('Добро пожаловать, Администратор!', 'success');
+    return;
+  }
+
+  const users = getUsers();
+  const user = users.find(u => (u.email===email || u.phone===email) && u.password===pass);
+  if (!user) { showErr(err,'Неверный логин или пароль'); return; }
+  if (user.blocked) { showErr(err,'Аккаунт заблокирован. Обратитесь к администратору.'); return; }
+  currentUser = user;
+  DB.set('session', user);
+  updateAuthUI();
+  closeAuth();
+  showToast('Добро пожаловать, '+user.name+'!','success');
+  if (afterAuthCallback) { afterAuthCallback(); afterAuthCallback = null; }
+}
+
+function doRegister() {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const pass = document.getElementById('regPass').value;
+  const err = document.getElementById('regError');
+  const suc = document.getElementById('regSuccess');
+  err.style.display='none'; suc.style.display='none';
+  if (!name||!email||!phone||!pass) { showErr(err,'Заполните все поля'); return; }
+  if (pass.length < 6) { showErr(err,'Пароль должен содержать минимум 6 символов'); return; }
+  const users = getUsers();
+  if (users.find(u => u.email===email)) { showErr(err,'Email уже используется'); return; }
+  const user = {id:Date.now(),name,email,phone,password:pass,blocked:false,createdAt:new Date().toISOString()};
+  users.push(user);
+  setUsers(users);
+  suc.textContent='Регистрация успешна! Войдите в аккаунт.';
+  suc.style.display='block';
+  setTimeout(() => switchAuthTab('login'), 1500);
+}
+
+function logoutUser() {
+  currentUser = null;
+  DB.del('session');
+  updateAuthUI();
+  if (document.getElementById('cabinet').classList.contains('open')) closeCabinet();
+  showToast('Вы вышли из аккаунта');
+  closeDropdown();
+}
+
+function updateAuthUI() {
+  const authBtns = document.getElementById('authBtns');
+  const userMenu = document.getElementById('userMenu');
+  if (currentUser) {
+    authBtns.style.display='none';
+    userMenu.classList.add('visible');
+    document.getElementById('userNameDisplay').textContent = currentUser.name.split(' ')[0];
+    updateNotifBadge();
+  } else {
+    authBtns.style.display='block';
+    userMenu.classList.remove('visible');
+  }
+}
+
+function updateNotifBadge() {
+  if (!currentUser) return;
+  const notifs = getNotifs().filter(n=>n.userId===currentUser.id && !n.read);
+  const badge = document.getElementById('notifBadge');
+  if (notifs.length > 0) { badge.style.display='flex'; badge.textContent=notifs.length; }
+  else { badge.style.display='none'; }
+}
+
+function toggleUserDropdown() {
+  document.getElementById('userDropdown').classList.toggle('open');
+}
+function closeDropdown() { document.getElementById('userDropdown').classList.remove('open'); }
+document.addEventListener('click', e => {
+  if (!e.target.closest('.user-menu')) closeDropdown();
+});
+
+function showErr(el, msg) { el.textContent=msg; el.style.display='block'; }
+
+// ============================================================
+// REQUIRE AUTH
+// ============================================================
+function requireAuthBooking(type) {
+  if (!currentUser) {
+    afterAuthCallback = () => { smoothScroll('booking'); if(type) document.getElementById('bType').value=type; };
+    openAuth('login');
+    showToast('Для бронирования необходимо войти в аккаунт','info');
+    return false;
+  }
+  smoothScroll('booking');
+  if(type) document.getElementById('bType').value=type;
+  return true;
+}
+
+// ============================================================
+// BOOKING SUBMIT
+// ============================================================
+function submitBooking() {
+  if (!currentUser) { openAuth('login'); showToast('Войдите для бронирования','info'); return; }
+  const name = document.getElementById('bName').value.trim();
+  const phone = document.getElementById('bPhone').value.trim();
+  const date = document.getElementById('bDate').value;
+  const time = document.getElementById('bTime').value;
+  const guests = document.getElementById('bGuests').value;
+  const type = document.getElementById('bType').value;
+  const comment = document.getElementById('bComment').value.trim();
+  if (!name||!phone||!date||!guests||!type) { showToast('Заполните все обязательные поля','error'); return; }
+  const booking = {
+    id: Date.now(),
+    userId: currentUser.id,
+    userName: name,
+    phone, date, time, guests, type, comment,
+    status: 'pending',
+    createdAt: new Date().toISOString()
+  };
+  const bookings = getBookings();
+  bookings.push(booking);
+  setBookings(bookings);
+  // notif
+  addNotification(currentUser.id,'Заявка принята','Ваша заявка на '+type+' '+date+' принята. Ожидайте подтверждения.',booking.id);
+  showToast('Заявка успешно отправлена! Ожидайте подтверждения.','success');
+  // clear
+  ['bName','bPhone','bDate','bTime','bGuests','bComment'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('bType').value='';
+  updateNotifBadge();
+}
+
+// ============================================================
+// NOTIFICATIONS
+// ============================================================
+function addNotification(userId, title, text, bookingId=null) {
+  const notifs = getNotifs();
+  notifs.unshift({id:Date.now(),userId,title,text,bookingId,read:false,createdAt:new Date().toISOString()});
+  setNotifs(notifs);
+}
+
+// ============================================================
+// MENU RENDER
+// ============================================================
+let currentMenuCat = 'Все';
+function renderMenu() {
+  const menu = getMenu();
+  const cats = ['Все',...new Set(menu.map(i=>i.cat))];
+  const catsEl = document.getElementById('menuCats');
+  catsEl.innerHTML = cats.map(c=>`<button class="menu-cat-btn${c===currentMenuCat?' active':''}" onclick="filterMenu('${c}',this)">${c}</button>`).join('');
+  const filtered = currentMenuCat==='Все' ? menu : menu.filter(i=>i.cat===currentMenuCat);
+  document.getElementById('menuGrid').innerHTML = filtered.map(item=>`
+    <div class="menu-card">
+      <div class="menu-card-img"><div class="dish-icon">${item.icon||'🍽️'}</div></div>
+      <div class="menu-card-body">
+        <div class="menu-card-cat">${item.cat}</div>
+        <div class="menu-card-name">${item.name}</div>
+        <div class="menu-card-desc">${item.desc}</div>
+        <div class="menu-card-footer">
+          <div class="menu-card-price">${Number(item.price).toLocaleString()} <span>сум</span></div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+function filterMenu(cat,btn) {
+  currentMenuCat=cat;
+  document.querySelectorAll('.menu-cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMenu();
+}
+
+// ============================================================
+// GALLERY RENDER
+// ============================================================
+let currentGalCat = 'all';
+function renderGallery() {
+  const gallery = getGallery();
+  const filtered = currentGalCat==='all' ? gallery : gallery.filter(g=>g.cat===currentGalCat);
+  document.getElementById('galleryGrid').innerHTML = filtered.map(g=>`
+    <div class="gallery-item${g.wide?' wide':''}${g.tall?' tall':''}">
+      <div class="gal-icon">${g.icon||'🖼️'}</div>
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-text">${g.name}</div><div class="gallery-overlay-sub">${catLabel(g.cat)}</div></div>
+      </div>
+    </div>`).join('');
+}
+function catLabel(c) { return {wedding:'Свадьба',banquet:'Банкет',interior:'Интерьер',food:'Блюда'}[c]||c }
+function filterGallery(cat,btn) {
+  currentGalCat=cat;
+  document.querySelectorAll('.gallery-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGallery();
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function showToast(msg, type='info', duration=3500) {
+  const icons = {success:'fa-check-circle',error:'fa-exclamation-circle',info:'fa-info-circle'};
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `<i class="fas ${icons[type]||icons.info}"></i><div class="toast-text">${msg}</div>`;
+  document.getElementById('toastContainer').appendChild(toast);
+  setTimeout(() => { toast.style.animation='toastIn 0.4s ease reverse'; setTimeout(()=>toast.remove(),400); }, duration);
+}
+
+// ============================================================
+// CONFIRM MODAL
+// ============================================================
+let confirmCb = null;
+function openConfirm(title,text,cb) {
+  document.getElementById('confirmTitle').textContent=title;
+  document.getElementById('confirmText').textContent=text;
+  document.getElementById('confirmModal').classList.add('open');
+  confirmCb=cb;
+}
+function closeConfirm() { document.getElementById('confirmModal').classList.remove('open'); confirmCb=null; }
+document.getElementById('confirmYes').onclick = () => { if(confirmCb) confirmCb(); closeConfirm(); };
+
+// ============================================================
+// DETAIL MODAL
+// ============================================================
+function openDetail(html, actions='') {
+  document.getElementById('detailContent').innerHTML=html;
+  document.getElementById('detailActions').innerHTML=actions;
+  document.getElementById('detailModal').classList.add('open');
+}
+function closeDetail() { document.getElementById('detailModal').classList.remove('open'); }
+
+// ============================================================
+// PERSONAL CABINET
+// ============================================================
+function openCabinet(tab='bookings') {
+  if (!currentUser) { openAuth('login'); return; }
+  closeDropdown();
+  document.getElementById('cabinet').classList.add('open');
+  document.getElementById('cabinetUserName').textContent = currentUser.name + ' | ' + currentUser.email;
+  document.getElementById('profileName').value = currentUser.name;
+  document.getElementById('profileEmail').value = currentUser.email;
+  document.getElementById('profilePhone').value = currentUser.phone;
+  switchCabinetTab(tab);
+}
+function closeCabinet() { document.getElementById('cabinet').classList.remove('open'); }
+
+function switchCabinetTab(tab, btn) {
+  document.querySelectorAll('.cabinet-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.cabinet-section').forEach(s=>s.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  else {
+    const idx = {bookings:0,notifs:1,profile:2}[tab]||0;
+    document.querySelectorAll('.cabinet-tab')[idx]?.classList.add('active');
+  }
+  document.getElementById('cab-'+tab)?.classList.add('active');
+  if (tab==='bookings') renderCabinetBookings();
+  if (tab==='notifs') renderCabinetNotifs();
+}
+
+function renderCabinetBookings() {
+  const bookings = getBookings().filter(b=>b.userId===currentUser.id).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  const el = document.getElementById('cabinetBookingsList');
+  if (!bookings.length) { el.innerHTML=`<div class="empty-state"><i class="fas fa-calendar-times"></i><p>У вас нет бронирований.<br><a href="#" onclick="closeCabinet();smoothScroll('booking')" style="color:var(--gold)">Забронировать мероприятие</a></p></div>`; return; }
+  el.innerHTML = bookings.map(b=>`
+    <div class="booking-card">
+      <div class="booking-card-info">
+        <div class="booking-card-date">${formatDate(b.date)} в ${b.time||'—'}</div>
+        <div class="booking-card-type">${b.type}</div>
+        <div class="booking-card-details">
+          Гостей: <strong style="color:var(--white)">${b.guests}</strong> &nbsp;|&nbsp;
+          Контакт: <strong style="color:var(--white)">${b.phone}</strong>
+          ${b.comment?`<br>Комментарий: ${b.comment}`:''}
+        </div>
+        <div style="margin-top:10px"><span class="badge badge-${b.status}">${statusLabel(b.status)}</span></div>
+      </div>
+      <div class="booking-card-actions">
+        ${b.status==='pending'?`<button class="btn-outline-gold" style="font-size:11px;padding:7px 16px" onclick="cancelBooking(${b.id})"><i class="fas fa-times"></i> Отменить</button>`:''}
+      </div>
+    </div>`).join('');
+}
+
+function cancelBooking(id) {
+  openConfirm('Отменить бронирование','Вы уверены, что хотите отменить заявку?', () => {
+    const bookings = getBookings();
+    const idx = bookings.findIndex(b=>b.id===id);
+    if (idx>-1) { bookings[idx].status='rejected'; setBookings(bookings); }
+    addNotification(currentUser.id,'Заявка отменена','Вы отменили бронирование на '+bookings.find(b=>b.id===id)?.date,id);
+    renderCabinetBookings();
+    updateNotifBadge();
+    showToast('Заявка отменена');
+  });
+}
+
+function renderCabinetNotifs() {
+  if (!currentUser) return;
+  const notifs = getNotifs().filter(n=>n.userId===currentUser.id);
+  const el = document.getElementById('cabinetNotifsList');
+  const count = notifs.filter(n=>!n.read).length;
+  document.getElementById('cabinetNotifCount').textContent = count>0?`(${count})`:'';
+  if (!notifs.length) { el.innerHTML=`<div class="empty-state"><i class="fas fa-bell-slash"></i><p>Уведомлений нет</p></div>`; return; }
+  // mark all read
+  const allNotifs = getNotifs();
+  allNotifs.forEach(n=>{ if(n.userId===currentUser.id) n.read=true; });
+  setNotifs(allNotifs);
+  updateNotifBadge();
+  el.innerHTML = notifs.map(n=>`
+    <div class="notif-item${n.read?'':' unread'}">
+      <div class="notif-icon"><i class="fas fa-bell"></i></div>
+      <div class="notif-text">
+        <h4>${n.title}</h4>
+        <p>${n.text}</p>
+        <div class="notif-time">${timeAgo(n.createdAt)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function saveProfile() {
+  const name = document.getElementById('profileName').value.trim();
+  const email = document.getElementById('profileEmail').value.trim();
+  const phone = document.getElementById('profilePhone').value.trim();
+  if (!name||!email) { showToast('Заполните обязательные поля','error'); return; }
+  const users = getUsers();
+  const idx = users.findIndex(u=>u.id===currentUser.id);
+  if (idx>-1) { users[idx].name=name; users[idx].email=email; users[idx].phone=phone; setUsers(users); }
+  currentUser.name=name; currentUser.email=email; currentUser.phone=phone;
+  DB.set('session', currentUser);
+  updateAuthUI();
+  showToast('Профиль обновлён','success');
+}
+
+// ============================================================
+// ADMIN AUTH
+// ============================================================
+function openAdminLogin() { document.getElementById('adminAuthModal').classList.add('open'); }
+function closeAdminLogin() { document.getElementById('adminAuthModal').classList.remove('open'); }
+
+function doAdminLogin() {
+  const login = document.getElementById('adminLogin').value;
+  const pass = document.getElementById('adminPass').value;
+  const err = document.getElementById('adminError');
+  err.style.display='none';
+  if (login==='admin' && pass==='admin123') {
+    currentAdmin=true;
+    DB.set('adminSession',true);
+    closeAdminLogin();
+    openAdmin();
+  } else {
+    showErr(err,'Неверный логин или пароль');
+  }
+}
+
+function logoutAdmin() {
+  currentAdmin=false;
+  DB.del('adminSession');
+  document.getElementById('adminPanel').classList.remove('open');
+  showToast('Вы вышли из панели управления');
+}
+
+function openAdmin() {
+  if (!currentAdmin) { openAdminLogin(); return; }
+  document.getElementById('adminPanel').classList.add('open');
+  adminNav('dashboard', document.querySelector('.admin-nav-item'));
+}
+
+// ============================================================
+// ADMIN NAV
+// ============================================================
+function adminNav(section, el) {
+  document.querySelectorAll('.admin-nav-item').forEach(i=>i.classList.remove('active'));
+  if (el) el.classList.add('active');
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sec-'+section)?.classList.add('active');
+  const titles = {dashboard:'Dashboard',bookings:'Управление заявками',users:'Пользователи',menu:'Управление меню',gallery:'Галерея',analytics:'Аналитика'};
+  document.getElementById('adminPageTitle').textContent = titles[section]||section;
+  if (section==='dashboard') renderDashboard();
+  if (section==='bookings') renderAdminBookings();
+  if (section==='users') renderAdminUsers();
+  if (section==='menu') renderAdminMenu();
+  if (section==='gallery') renderAdminGallery();
+  if (section==='analytics') renderAnalytics();
+  if (window.innerWidth<=1100) closeAdminSidebar();
+}
+
+function toggleAdminSidebar() {
+  document.getElementById('adminSidebar').classList.toggle('open');
+  document.getElementById('adminSidebarOverlay').classList.toggle('open');
+}
+function closeAdminSidebar() {
+  document.getElementById('adminSidebar').classList.remove('open');
+  document.getElementById('adminSidebarOverlay').classList.remove('open');
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard() {
+  const bookings = getBookings();
+  const users = getUsers();
+  const stats = [
+    {label:'Всего пользователей',val:users.length,sub:'зарегистрировано'},
+    {label:'Всего заявок',val:bookings.length,sub:'общее количество'},
+    {label:'Новые заявки',val:bookings.filter(b=>b.status==='pending').length,sub:'ожидают обработки'},
+    {label:'Подтверждено',val:bookings.filter(b=>b.status==='confirmed').length,sub:'мероприятий'}
+  ];
+  document.getElementById('dashCards').innerHTML = stats.map(s=>`
+    <div class="stat-card">
+      <div class="stat-card-label">${s.label}</div>
+      <div class="stat-card-value">${s.val}</div>
+      <div class="stat-card-sub">${s.sub}</div>
+    </div>`).join('');
+  const recent5 = [...bookings].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).slice(0,5);
+  document.getElementById('recentBookingsTbl').innerHTML = recent5.map(b=>`
+    <tr><td data-label="Клиент" style="color:var(--white)">${b.userName}</td><td data-label="Тип">${b.type}</td><td data-label="Дата">${formatDate(b.date)}</td><td data-label="Статус"><span class="badge badge-${b.status}">${statusLabel(b.status)}</span></td></tr>`).join('') || '<tr><td colspan="4" style="text-align:center;color:var(--text-muted)">Нет заявок</td></tr>';
+  const recent5u = [...users].sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).slice(0,5);
+  document.getElementById('recentUsersTbl').innerHTML = recent5u.map(u=>`
+    <tr><td data-label="Имя" style="color:var(--white)">${u.name}</td><td data-label="Email">${u.email}</td><td data-label="Дата">${formatDate(u.createdAt)}</td></tr>`).join('') || '<tr><td colspan="3" style="text-align:center;color:var(--text-muted)">Нет пользователей</td></tr>';
+}
+
+// ============================================================
+// ADMIN BOOKINGS
+// ============================================================
+function renderAdminBookings() {
+  const search = document.getElementById('bookingSearch')?.value.toLowerCase()||'';
+  const filter = document.getElementById('bookingFilter')?.value||'';
+  let bookings = getBookings().filter(b => {
+    const matchSearch = !search || b.userName.toLowerCase().includes(search) || b.phone.includes(search) || b.type.toLowerCase().includes(search);
+    const matchFilter = !filter || b.status===filter;
+    return matchSearch && matchFilter;
+  }).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  document.getElementById('adminBookingsTbl').innerHTML = bookings.length ? bookings.map((b,i)=>`
+    <tr>
+      <td data-label="#">${i+1}</td>
+      <td data-label="Клиент" style="color:var(--white)">${b.userName}</td>
+      <td data-label="Телефон">${b.phone}</td>
+      <td data-label="Тип">${b.type}</td>
+      <td data-label="Дата">${formatDate(b.date)}</td>
+      <td data-label="Гостей">${b.guests}</td>
+      <td data-label="Статус"><span class="badge badge-${b.status}">${statusLabel(b.status)}</span></td>
+      <td data-label="Действия">
+        <div class="table-actions">
+          <button class="btn-icon" title="Подробнее" onclick="viewBooking(${b.id})"><i class="fas fa-eye"></i></button>
+          ${b.status==='pending'?`<button class="btn-icon success" title="Подтвердить" onclick="changeBookingStatus(${b.id},'confirmed')"><i class="fas fa-check"></i></button><button class="btn-icon danger" title="Отклонить" onclick="changeBookingStatus(${b.id},'rejected')"><i class="fas fa-times"></i></button>`:''}
+          ${b.status==='confirmed'?`<button class="btn-icon" title="Завершить" onclick="changeBookingStatus(${b.id},'completed')"><i class="fas fa-flag-checkered"></i></button>`:''}
+          <button class="btn-icon danger" title="Удалить" onclick="deleteBooking(${b.id})"><i class="fas fa-trash"></i></button>
+        </div>
+      </td>
+    </tr>`).join('') : '<tr><td colspan="8" style="text-align:center;color:var(--text-muted);padding:32px">Заявок не найдено</td></tr>';
+}
+
+function viewBooking(id) {
+  const b = getBookings().find(b=>b.id===id);
+  if (!b) return;
+  const html = `
+    <div class="detail-row"><div class="detail-key">Клиент</div><div class="detail-val">${b.userName}</div></div>
+    <div class="detail-row"><div class="detail-key">Телефон</div><div class="detail-val">${b.phone}</div></div>
+    <div class="detail-row"><div class="detail-key">Тип</div><div class="detail-val">${b.type}</div></div>
+    <div class="detail-row"><div class="detail-key">Дата</div><div class="detail-val">${formatDate(b.date)}</div></div>
+    <div class="detail-row"><div class="detail-key">Время</div><div class="detail-val">${b.time||'—'}</div></div>
+    <div class="detail-row"><div class="detail-key">Гостей</div><div class="detail-val">${b.guests}</div></div>
+    <div class="detail-row"><div class="detail-key">Статус</div><div class="detail-val"><span class="badge badge-${b.status}">${statusLabel(b.status)}</span></div></div>
+    <div class="detail-row"><div class="detail-key">Комментарий</div><div class="detail-val">${b.comment||'—'}</div></div>
+    <div class="detail-row"><div class="detail-key">Создана</div><div class="detail-val">${new Date(b.createdAt).toLocaleString('ru')}</div></div>
+  `;
+  const actions = `
+    ${b.status==='pending'?`<button class="btn-gold" onclick="changeBookingStatus(${b.id},'confirmed');closeDetail()">Подтвердить</button><button class="btn-outline-gold" onclick="changeBookingStatus(${b.id},'rejected');closeDetail()">Отклонить</button>`:''}
+    ${b.status==='confirmed'?`<button class="btn-gold" onclick="changeBookingStatus(${b.id},'completed');closeDetail()">Завершить</button>`:''}
+    <button class="btn-outline-gold" onclick="deleteBooking(${b.id});closeDetail()">Удалить</button>
+  `;
+  openDetail(html, actions);
+}
+
+function changeBookingStatus(id, status) {
+  const bookings = getBookings();
+  const idx = bookings.findIndex(b=>b.id===id);
+  if (idx===-1) return;
+  bookings[idx].status = status;
+  setBookings(bookings);
+  const b = bookings[idx];
+  const msgs = {
+    confirmed:'Ваше бронирование на '+b.type+' '+formatDate(b.date)+' подтверждено! Ждём вас.',
+    rejected:'К сожалению, ваше бронирование на '+b.type+' '+formatDate(b.date)+' отклонено. Свяжитесь с нами для уточнения.',
+    completed:'Ваше мероприятие '+b.type+' завершено. Спасибо, что выбрали O\'ZBEGIM!'
+  };
+  const titles = {confirmed:'Заявка подтверждена ✅',rejected:'Заявка отклонена ❌',completed:'Мероприятие завершено 🎉'};
+  if (msgs[status]) addNotification(b.userId, titles[status]||status, msgs[status], id);
+  renderAdminBookings();
+  showToast('Статус обновлён: '+statusLabel(status),'success');
+}
+
+function deleteBooking(id) {
+  openConfirm('Удалить заявку','Удалить заявку без возможности восстановления?', () => {
+    const bookings = getBookings().filter(b=>b.id!==id);
+    setBookings(bookings);
+    renderAdminBookings();
+    showToast('Заявка удалена');
+  });
+}
+
+// ============================================================
+// ADMIN USERS
+// ============================================================
+function renderAdminUsers() {
+  const search = document.getElementById('userSearch')?.value.toLowerCase()||'';
+  const users = getUsers().filter(u => !search || u.name.toLowerCase().includes(search) || u.email.toLowerCase().includes(search));
+  const bookings = getBookings();
+  document.getElementById('adminUsersTbl').innerHTML = users.length ? users.map((u,i)=>`
+    <tr>
+      <td data-label="#">${i+1}</td>
+      <td data-label="Имя" style="color:var(--white)">${u.name}</td>
+      <td data-label="Email">${u.email}</td>
+      <td data-label="Телефон">${u.phone||'—'}</td>
+      <td data-label="Заявок">${bookings.filter(b=>b.userId===u.id).length}</td>
+      <td data-label="Статус"><span class="badge ${u.blocked?'badge-rejected':'badge-confirmed'}">${u.blocked?'Заблокирован':'Активен'}</span></td>
+      <td data-label="Действия">
+        <div class="table-actions">
+          <button class="btn-icon ${u.blocked?'success':'danger'}" title="${u.blocked?'Разблокировать':'Заблокировать'}" onclick="toggleUserBlock(${u.id})"><i class="fas fa-${u.blocked?'unlock':'lock'}"></i></button>
+          <button class="btn-icon danger" title="Удалить" onclick="deleteUser(${u.id})"><i class="fas fa-trash"></i></button>
+        </div>
+      </td>
+    </tr>`).join('') : '<tr><td colspan="7" style="text-align:center;color:var(--text-muted);padding:32px">Пользователей не найдено</td></tr>';
+}
+
+function toggleUserBlock(id) {
+  const users = getUsers();
+  const idx = users.findIndex(u=>u.id===id);
+  if (idx===-1) return;
+  users[idx].blocked = !users[idx].blocked;
+  setUsers(users);
+  renderAdminUsers();
+  showToast(users[idx].blocked?'Пользователь заблокирован':'Пользователь разблокирован', users[idx].blocked?'error':'success');
+}
+
+function deleteUser(id) {
+  openConfirm('Удалить пользователя','Удалить пользователя и все его данные?', () => {
+    setUsers(getUsers().filter(u=>u.id!==id));
+    setBookings(getBookings().filter(b=>b.userId!==id));
+    renderAdminUsers();
+    showToast('Пользователь удалён');
+  });
+}
+
+// ============================================================
+// ADMIN MENU
+// ============================================================
+let editMenuId = null;
+function renderAdminMenu() {
+  const menu = getMenu();
+  document.getElementById('adminMenuTbl').innerHTML = menu.length ? menu.map((m,i)=>`
+    <tr>
+      <td data-label="#">${i+1}</td>
+      <td data-label="Название" style="color:var(--white)">${m.icon||''} ${m.name}</td>
+      <td data-label="Категория">${m.cat}</td>
+      <td data-label="Цена">${Number(m.price).toLocaleString()} сум</td>
+      <td data-label="Описание" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.desc}</td>
+      <td data-label="Действия">
+        <div class="table-actions">
+          <button class="btn-icon" onclick="editMenuItem(${m.id})"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon danger" onclick="deleteMenuItem(${m.id})"><i class="fas fa-trash"></i></button>
+        </div>
+      </td>
+    </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:32px">Нет блюд</td></tr>';
+}
+
+function showMenuForm(item=null) {
+  editMenuId = item ? item.id : null;
+  document.getElementById('menuFormTitle').textContent = item ? 'Редактировать блюдо' : 'Добавить блюдо';
+  document.getElementById('mName').value = item?.name||'';
+  document.getElementById('mCat').value = item?.cat||'Салаты';
+  document.getElementById('mPrice').value = item?.price||'';
+  document.getElementById('mDesc').value = item?.desc||'';
+  document.getElementById('mIcon').value = item?.icon||'🍽️';
+  document.getElementById('menuFormWrap').style.display='block';
+  document.getElementById('menuFormWrap').scrollIntoView({behavior:'smooth'});
+}
+
+function editMenuItem(id) {
+  const item = getMenu().find(m=>m.id===id);
+  if (item) showMenuForm(item);
+}
+
+function saveMenuItem() {
+  const name = document.getElementById('mName').value.trim();
+  const cat = document.getElementById('mCat').value;
+  const price = parseInt(document.getElementById('mPrice').value);
+  const desc = document.getElementById('mDesc').value.trim();
+  const icon = document.getElementById('mIcon').value.trim();
+  if (!name||!price) { showToast('Заполните обязательные поля','error'); return; }
+  const menu = getMenu();
+  if (editMenuId) {
+    const idx = menu.findIndex(m=>m.id===editMenuId);
+    if (idx>-1) menu[idx] = {...menu[idx],name,cat,price,desc,icon};
+  } else {
+    menu.push({id:Date.now(),name,cat,price,desc,icon});
+  }
+  setMenu(menu);
+  cancelMenuForm();
+  renderAdminMenu();
+  renderMenu();
+  showToast(editMenuId?'Блюдо обновлено':'Блюдо добавлено','success');
+  editMenuId=null;
+}
+
+function deleteMenuItem(id) {
+  openConfirm('Удалить блюдо','Удалить блюдо из меню?', () => {
+    setMenu(getMenu().filter(m=>m.id!==id));
+    renderAdminMenu();
+    renderMenu();
+    showToast('Блюдо удалено');
+  });
+}
+
+function cancelMenuForm() { document.getElementById('menuFormWrap').style.display='none'; editMenuId=null; }
+
+// ============================================================
+// ADMIN GALLERY
+// ============================================================
+function renderAdminGallery() {
+  const gallery = getGallery();
+  document.getElementById('adminGalleryGrid').innerHTML = gallery.map(g=>`
+    <div style="background:var(--dark4);border:1px solid var(--border);padding:20px;text-align:center;position:relative">
+      <div style="font-size:36px;margin-bottom:8px">${g.icon||'🖼️'}</div>
+      <div style="font-size:13px;color:var(--white);margin-bottom:4px">${g.name}</div>
+      <div style="font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">${catLabel(g.cat)}</div>
+      <button class="btn-icon danger" style="width:100%" onclick="deleteGalleryItem(${g.id})"><i class="fas fa-trash"></i> Удалить</button>
+    </div>`).join('') || '<p style="color:var(--text-muted)">Галерея пуста</p>';
+}
+
+function showGalleryForm() { document.getElementById('galleryFormWrap').style.display='block'; }
+function cancelGalleryForm() { document.getElementById('galleryFormWrap').style.display='none'; }
+
+function saveGalleryItem() {
+  const name = document.getElementById('gName').value.trim();
+  const cat = document.getElementById('gCat').value;
+  const icon = document.getElementById('gIcon').value.trim();
+  const desc = document.getElementById('gDesc').value.trim();
+  if (!name) { showToast('Введите название','error'); return; }
+  const gallery = getGallery();
+  gallery.push({id:Date.now(),name,cat,icon,desc});
+  setGallery(gallery);
+  cancelGalleryForm();
+  renderAdminGallery();
+  renderGallery();
+  showToast('Добавлено в галерею','success');
+  ['gName','gIcon','gDesc'].forEach(id=>document.getElementById(id).value='');
+}
+
+function deleteGalleryItem(id) {
+  openConfirm('Удалить фото','Удалить запись из галереи?', () => {
+    setGallery(getGallery().filter(g=>g.id!==id));
+    renderAdminGallery();
+    renderGallery();
+    showToast('Удалено из галереи');
+  });
+}
+
+// ============================================================
+// ANALYTICS
+// ============================================================
+function renderAnalytics() {
+  const bookings = getBookings();
+  const months = ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'];
+  const monthData = months.map((m,i) => bookings.filter(b=>b.createdAt && new Date(b.createdAt).getMonth()===i).length);
+  const maxM = Math.max(...monthData,1);
+  document.getElementById('chartMonths').innerHTML = months.map((m,i)=>`
+    <div class="bar-col">
+      <div class="bar-val">${monthData[i]}</div>
+      <div class="bar-fill" style="height:${(monthData[i]/maxM)*140}px"></div>
+      <div class="bar-label">${m}</div>
+    </div>`).join('');
+
+  const types = ['Свадьба','Банкет','Корпоратив','День рождения','Другое'];
+  const typeData = types.map(t=>bookings.filter(b=>b.type===t).length);
+  const maxT = Math.max(...typeData,1);
+  document.getElementById('chartServices').innerHTML = types.map((t,i)=>`
+    <div class="bar-col">
+      <div class="bar-val">${typeData[i]}</div>
+      <div class="bar-fill" style="height:${(typeData[i]/maxT)*140}px"></div>
+      <div class="bar-label" style="font-size:9px">${t}</div>
+    </div>`).join('');
+
+  const statuses = ['pending','confirmed','rejected','completed'];
+  const statusNames = ['Ожидание','Подтвержд.','Отклонено','Завершено'];
+  const statusColors = ['#f1c40f','#2ecc71','#e74c3c','#3498db'];
+  const statusData = statuses.map(s=>bookings.filter(b=>b.status===s).length);
+  const maxS = Math.max(...statusData,1);
+  document.getElementById('chartStatuses').innerHTML = statuses.map((s,i)=>`
+    <div class="bar-col">
+      <div class="bar-val">${statusData[i]}</div>
+      <div class="bar-fill" style="height:${(statusData[i]/maxS)*140}px;background:${statusColors[i]}"></div>
+      <div class="bar-label" style="font-size:9px">${statusNames[i]}</div>
+    </div>`).join('');
+
+  const users = getUsers();
+  const userMonthData = months.map((m,i) => users.filter(u=>u.createdAt && new Date(u.createdAt).getMonth()===i).length);
+  const maxU = Math.max(...userMonthData,1);
+  document.getElementById('chartUsers').innerHTML = months.map((m,i)=>`
+    <div class="bar-col">
+      <div class="bar-val">${userMonthData[i]}</div>
+      <div class="bar-fill" style="height:${(userMonthData[i]/maxU)*140}px;background:#9b7b2e"></div>
+      <div class="bar-label">${m}</div>
+    </div>`).join('');
+}
+
+// ============================================================
+// UTILS
+// ============================================================
+function statusLabel(s) {
+  return {pending:'Ожидание',confirmed:'Подтверждено',rejected:'Отклонено',completed:'Завершено'}[s]||s;
+}
+function formatDate(d) {
+  if (!d) return '—';
+  try { return new Date(d).toLocaleDateString('ru',{day:'2-digit',month:'long',year:'numeric'}); }
+  catch { return d; }
+}
+function timeAgo(dateStr) {
+  const diff = (Date.now()-new Date(dateStr))/1000;
+  if (diff<60) return 'только что';
+  if (diff<3600) return Math.floor(diff/60)+' мин назад';
+  if (diff<86400) return Math.floor(diff/3600)+' ч назад';
+  return formatDate(dateStr);
+}
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  checkDataIntegrity();
+  initDB();
+  renderMenu();
+  renderGallery();
+  updateAuthUI();
+  if (currentAdmin) openAdmin();
+  // Set min date for booking
+  const today = new Date().toISOString().split('T')[0];
+  const bDate = document.getElementById('bDate');
+  if (bDate) bDate.min = today;
+});
+
+// Проверка целостности данных: если основное хранилище пустое/повреждено,
+// но есть резервная копия — восстанавливаем её, чтобы данные не пропали
+function checkDataIntegrity() {
+  ['users','bookings','notifications','menu','gallery'].forEach(key => {
+    try {
+      const main = localStorage.getItem(DB_PREFIX + key);
+      const backup = localStorage.getItem(DB_BACKUP_PREFIX + key);
+      if ((main === null || main === 'null') && backup) {
+        localStorage.setItem(DB_PREFIX + key, backup);
+        console.warn('Восстановлены данные "'+key+'" из резервной копии при загрузке');
+      }
+    } catch (e) {
+      console.error('Ошибка проверки целостности для', key, e);
+    }
+  });
+}
+
+// Принудительное досохранение всех ключевых данных перед закрытием/уходом со страницы,
+// чтобы исключить потерю несинхронизированных изменений
+window.addEventListener('beforeunload', () => {
+  try {
+    setUsers(getUsers());
+    setBookings(getBookings());
+    setNotifs(getNotifs());
+    setMenu(getMenu());
+    setGallery(getGallery());
+  } catch (e) {}
+});
+
+// Auto-refresh notif badge
+setInterval(() => { if (currentUser) updateNotifBadge(); }, 10000);
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1100 && typeof closeAdminSidebar === 'function') closeAdminSidebar();
+});
+</script>
+</body>
+</html>
